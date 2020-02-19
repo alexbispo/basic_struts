@@ -12,14 +12,22 @@ public class HelloAction extends ActionSupport {
 	
 	private MessageStore messageStore;
 	
+	private static int helloCount = 0;
+	
 	public MessageStore getMessageStore() {
 		return messageStore;
 	}
 	
 	public String execute() {
+		helloCount++;
+		
 		messageStore = new MessageStore();
 		
 		return SUCCESS;
+	}
+	
+	public int getHelloCount() {
+		return helloCount;
 	}
 
 }
